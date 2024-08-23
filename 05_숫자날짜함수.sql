@@ -28,3 +28,42 @@ FROM dual;
 -- 날짜 함수
 -- sysdate: 컴퓨터의 현재 날짜, 시간 정보를 가져와서 제공하는 키워드 -> 시간 있음!
 select sysdate from dual;
+select systimestamp from dual; -- -> 더 세밀한 시간과 표준시 정보까지 제공.
+
+-- 날짜 연산
+select sysdate + 1 from dual;-- 일자 덧셈 연산이 가능.
+
+-- 날짜 타입과 날짜 타입은 뺄셈 연산을 지원합니다.
+-- 덧셈은 허용하지 않습니다.
+
+select 
+    first_name,
+    sysdate - hire_date
+from employees; 
+
+select 
+    first_name,
+    (sysdate - hire_date) /7
+from employees;
+
+select 
+    first_name,
+    (sysdate - hire_date) / 365
+from employees;
+
+-- 날짜 반올림, 절사
+select round(sysdate) from dual;
+select round(sysdate, 'year') from dual; -- 년 기준으로 반올림
+select round(sysdate, 'month') from dual; -- 월 기준으로 반올림
+select round(sysdate, 'day') from dual; -- 주 기준으로 반올림(해당 주의 일요일 날짜)
+
+select trunc(sysdate) from dual;
+select trunc(sysdate, 'year') from dual; -- 년 기준으로 절사
+select trunc(sysdate, 'month') from dual; -- 월 기준으로 절사
+select trunc(sysdate, 'day') from dual; -- 주 기준으로 절사(해당 주의 일요일 날짜)
+
+
+
+
+
+

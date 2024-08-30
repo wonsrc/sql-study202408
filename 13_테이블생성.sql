@@ -13,8 +13,8 @@ create table dept2(
     dept_no NUMBER(2), 
     dept_name varchar2(14),
     loca varchar2(15),
-    dept_date date,
-    dept_bonus number(10)
+    dept_date date default sysdate,
+    dept_bonus number(10) default 100000
 );
 
 desc dept2;
